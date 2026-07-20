@@ -61,7 +61,7 @@ const updateColor = (
       <div class="field-wrapper">
         <AtomInput
           type="number"
-          :model-value="red"
+          :model-value="props.red"
           @update:model-value="(val) => updateColor('red', val)"
           :min="0"
           :max="255"
@@ -74,7 +74,7 @@ const updateColor = (
       <div class="field-wrapper">
         <AtomInput
           type="number"
-          :model-value="green"
+          :model-value="props.green"
           @update:model-value="(val) => updateColor('green', val)"
           :min="0"
           :max="255"
@@ -89,7 +89,7 @@ const updateColor = (
       <div class="field-wrapper">
         <AtomInput
           type="number"
-          :model-value="blue"
+          :model-value="props.blue"
           @update:model-value="(val) => updateColor('blue', val)"
           :min="0"
           :max="255"

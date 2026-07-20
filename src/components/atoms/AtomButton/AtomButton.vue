@@ -9,10 +9,7 @@ const props = withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <button
-    :class="['atom-button', variant]"
-    data-testid="atom-button"
-  >
+  <button :class="['atom-button', variant]" data-testid="atom-button">
     <slot />
   </button>
 </template>
@@ -29,7 +26,7 @@ button {
 }
 
 .primary {
-  @apply bg-blue-400 text-white hover:bg-blue-500;
+  @apply bg-blue-600 text-white hover:bg-blue-500;
 }
 
 .destructive {

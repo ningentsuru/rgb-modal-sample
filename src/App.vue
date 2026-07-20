@@ -25,12 +25,14 @@ function handleRandomizer() {
   blue.value = fixedRandomRange();
 }
 
-function handleFixedRandomRange(channel: string) {
+function handleFixedRandomRange(channel: string, value?: number) {
   if (!channel) return;
 
-  if (channel === "red") red.value = fixedRandomRange();
-  if (channel === "green") green.value = fixedRandomRange();
-  if (channel === "blue") blue.value = fixedRandomRange();
+  const newValue = value !== undefined ? value : fixedRandomRange();
+
+  if (channel === "red") red.value = newValue;
+  if (channel === "green") green.value = newValue;
+  if (channel === "blue") blue.value = newValue;
 }
 </script>
 
