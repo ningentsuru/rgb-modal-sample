@@ -1,5 +1,8 @@
 # RGB-MODAL-SAMPLE
 
+- Visit the sample project at vercel: https://rgb-modal-sample.vercel.app/
+- Vist the sample storybook at vercel: https://rgb-modal-sample-storybook.vercel.app/
+
 # Step1
 
 ![Step1](src/assets/demo/step1.png)
