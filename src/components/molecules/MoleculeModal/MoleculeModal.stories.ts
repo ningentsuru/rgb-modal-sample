@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/vue3-vite";
 import { ref } from "vue";
 import MoleculeModal from "./MoleculeModal.vue";
-import AtomButton from '@/components/atoms/AtomButton'
+import AtomButton from "@/components/atoms/AtomButton";
 
 const meta: Meta<typeof MoleculeModal> = {
   component: MoleculeModal,
@@ -13,7 +13,9 @@ const meta: Meta<typeof MoleculeModal> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof MoleculeModal> & { args: { slotContent?: string } };
+type Story = StoryObj<typeof MoleculeModal> & {
+  args: { slotContent?: string };
+};
 
 const ModalTemplate = (args: any) => ({
   components: { MoleculeModal, AtomButton },
@@ -70,15 +72,22 @@ export const HasTitle: Story = {
   render: ModalTemplate,
   args: {
     ...DefaultOpen.args,
-    title: "Hello world!",
+    title: "Reusable Modal Component!",
   },
 };
-
 
 export const HasSlot: Story = {
   render: ModalTemplate,
   args: {
     ...HasTitle.args,
-    default: "<p>Modal with a title.</p>",
+    default: `
+      <div class="flex flex-col justify-center items-center">
+        <h1>Header no.1</h1>
+        <p>I am paragraph!</p>
+        <strong>I am strong!</strong>
+        <u>I am underline!</u>
+        <i>I am italic!</i>
+      </div>
+    `,
   },
 };
