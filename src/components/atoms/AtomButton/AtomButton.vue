@@ -9,17 +9,13 @@ const props = withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <button :class="['atom-button', variant]" data-testid="atom-button">
+  <button :class="['atom-button px-4 py-2 rounded cursor-pointer', variant]" data-testid="atom-button">
     <slot />
   </button>
 </template>
 
 <style scoped>
 @reference "@/style.css";
-
-button {
-  @apply px-4 py-2 rounded cursor-pointer;
-}
 
 .default {
   @apply bg-white text-gray-900 border border-gray-200 hover:bg-gray-50;

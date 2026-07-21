@@ -70,6 +70,7 @@ const OrganismTemplate = (args: any) => ({
   },
   template: `
     <OrganismChangeBackgroundDiv
+      class="w-[calc(100vw-32px)]! h-[calc(100vh-32px)]!"
       :red="red"
       :green="green"
       :blue="blue"

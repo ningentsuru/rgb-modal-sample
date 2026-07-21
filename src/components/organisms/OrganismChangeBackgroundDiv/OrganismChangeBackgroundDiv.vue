@@ -33,15 +33,17 @@ const updateColor = (
 </script>
 
 <template>
-  <div class="organism-change-background-div">
-    <h1 class="title">Change the Div background below.</h1>
-    <div class="preview" :style="colorBg" />
-    <div class="rgb-wrapper">
+  <div
+    class="flex flex-col justify-center items-center w-screen h-screen bg-gray-300 gap-2"
+  >
+    <h1 class="text-2xl">Change the Div background below.</h1>
+    <div class="w-100 h-100 border border-black" :style="colorBg" />
+    <div class="flex justify-center gap-4">
       <span>R:{{ props.red }}</span>
       <span>G:{{ props.green }}</span>
       <span>B:{{ props.blue }}</span>
     </div>
-    <div class="buttons">
+    <div class="flex justify-center gap-2">
       <AtomButton variant="primary" @click="showModal = true">
         Open Modal!
       </AtomButton>
@@ -58,7 +60,7 @@ const updateColor = (
       @close="showModal = false"
     >
       <label for="red">Red:</label>
-      <div class="field-wrapper">
+      <div class="flex gap-4">
         <AtomInput
           type="number"
           :model-value="props.red"
@@ -71,7 +73,7 @@ const updateColor = (
       </div>
 
       <label for="green">Green:</label>
-      <div class="field-wrapper">
+      <div class="flex gap-4">
         <AtomInput
           type="number"
           :model-value="props.green"
@@ -86,7 +88,7 @@ const updateColor = (
       </div>
 
       <label for="blue">Blue:</label>
-      <div class="field-wrapper">
+      <div class="flex gap-4">
         <AtomInput
           type="number"
           :model-value="props.blue"
@@ -102,31 +104,3 @@ const updateColor = (
     </MoleculeModal>
   </div>
 </template>
-
-<style scoped>
-@reference "@/style.css";
-
-.organism-change-background-div {
-  @apply flex flex-col justify-center items-center w-screen h-screen bg-gray-300 gap-2;
-}
-
-.title {
-  @apply text-2xl;
-}
-
-.preview {
-  @apply w-100 h-100 border border-black;
-}
-
-.rgb-wrapper {
-  @apply flex justify-center gap-4;
-}
-
-.buttons {
-  @apply flex justify-center gap-2;
-}
-
-.field-wrapper {
-  @apply flex gap-4;
-}
-</style>

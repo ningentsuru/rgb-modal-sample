@@ -47,7 +47,7 @@ watch(
   <Teleport to="body">
     <div
       v-if="show"
-      class="molecule-modal-backdrop"
+      class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm"
       data-testid="molecule-modal-backdrop"
       @click="handleClose"
     >
@@ -58,18 +58,18 @@ watch(
         data-testid="molecule-modal"
         @click.stop
       >
-        <div class="dialog-container">
-          <div class="header">
-            <h2 class="title">
+        <div class="flex flex-col">
+          <div class="mb-4 flex items-center justify-between">
+            <h2 class="mb-4 flex items-center justify-between">
               {{ props.title }}
             </h2>
           </div>
 
-          <div class="slot-wrapper">
+          <div class="mb-6 text-gray-600">
             <slot name="default" />
           </div>
 
-          <div class="footer">
+          <div class="flex justify-end">
             <AtomButton variant="destructive" @click="handleClose">
               Close
             </AtomButton>
@@ -79,35 +79,3 @@ watch(
     </div>
   </Teleport>
 </template>
-
-<style scoped>
-@reference "@/style.css";
-
-.molecule-modal-backdrop {
-  @apply fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm;
-}
-
-.molecule-modal {
-  @apply relative z-50 m-4 w-full max-w-md rounded-lg bg-white p-6 shadow-xl;
-}
-
-.dialog-container {
-  @apply flex flex-col;
-}
-
-.header {
-  @apply mb-4 flex items-center justify-between;
-}
-
-.title {
-  @apply text-xl font-semibold text-gray-900;
-}
-
-.slot-wrapper {
-  @apply mb-6 text-gray-600;
-}
-
-.footer {
-  @apply flex justify-end;
-}
-</style>

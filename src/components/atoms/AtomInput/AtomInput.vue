@@ -54,6 +54,7 @@ const handleInput = (e: Event) => {
 
 <template>
   <input
+    class="atom-input w-full px-3 py-2 text-gray-900 bg-white border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 disabled:text-gray-500 transition-colors duration-200"
     v-bind="$attrs"
     :type="props.type"
     :value="props.modelValue"
@@ -65,11 +66,3 @@ const handleInput = (e: Event) => {
     data-testid="atom-input"
   />
 </template>
-
-<style scoped>
-@reference "@/style.css";
-
-input {
-  @apply w-full px-3 py-2 text-gray-900 bg-white border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 disabled:text-gray-500 transition-colors duration-200;
-}
-</style>
